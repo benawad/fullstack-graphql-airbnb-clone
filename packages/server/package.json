@@ -1,0 +1,79 @@
+{
+  "name": "graphql-ts-server-boilerplate",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "@gql2ts/types": "^1.8.0",
+    "@types/bcryptjs": "^2.4.1",
+    "@types/connect-redis": "^0.0.7",
+    "@types/express-rate-limit": "^2.9.3",
+    "@types/express-session": "^1.15.8",
+    "@types/faker": "^4.1.2",
+    "@types/glob": "^5.0.35",
+    "@types/ioredis": "^3.2.7",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
+    "@types/node-fetch": "^1.6.9",
+    "@types/request-promise": "^4.1.41",
+    "@types/sparkpost": "^2.1.3",
+    "@types/uuid": "^3.4.3",
+    "@types/ws": "^5.1.2",
+    "@types/yup": "^0.24.3",
+    "gql2ts": "^1.7.2",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
+    "ts-jest": "^22.4.4",
+    "ts-node": "6.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.12.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "@gql2ts/from-schema": "^1.8.0",
+    "@types/express": "^4.11.1",
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "connect-redis": "^3.3.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-rate-limit": "^2.11.0",
+    "express-session": "^1.15.6",
+    "faker": "^4.1.0",
+    "glob": "^7.1.2",
+    "graphql": "^0.13.2",
+    "graphql-import": "^0.5.0",
+    "graphql-tools": "^3.0.0",
+    "graphql-yoga": "^1.9.2",
+    "ioredis": "^3.2.2",
+    "merge-graphql-schemas": "^1.5.1",
+    "node-fetch": "^2.1.2",
+    "pg": "^7.4.1",
+    "rate-limit-redis": "^1.4.0",
+    "reflect-metadata": "^0.1.12",
+    "request-promise": "^4.2.2",
+    "sparkpost": "^2.1.2",
+    "typeorm": "0.2.0",
+    "uuid": "^3.2.1",
+    "yup": "^0.24.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
+    "test": "NODE_ENV=test jest --watch",
+    "gen-schema-types": "ts-node src/scripts/createTypes.ts"
+  },
+  "jest": {
+    "globalSetup": "./src/testUtils/callSetup.js",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
