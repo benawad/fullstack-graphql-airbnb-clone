@@ -16,7 +16,9 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "types": ["jest", "node", "react", "react-dom", "react-router-dom"],
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
