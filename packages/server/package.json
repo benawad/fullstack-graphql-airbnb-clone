@@ -1,5 +1,5 @@
 {
-  "name": "graphql-ts-server-boilerplate",
+  "name": "@abb/server",
   "version": "0.0.1",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
@@ -54,7 +54,8 @@
     "sparkpost": "^2.1.2",
     "typeorm": "0.2.0",
     "uuid": "^3.2.1",
-    "yup": "^0.24.1"
+    "yup": "^0.24.1",
+    "@abb/common": "1.0.0"
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
