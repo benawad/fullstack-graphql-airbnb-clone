@@ -25,7 +25,8 @@
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
     "yup": "^0.25.1",
-    "@abb/common": "1.0.0"
+    "@abb/common": "1.0.0",
+    "@abb/controller": "1.0.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
