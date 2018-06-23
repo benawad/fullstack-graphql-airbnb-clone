@@ -2,11 +2,6 @@
   {
     "name": "production",
     "type": "postgres",
-    "host": "localhost",
-    "port": 5432,
-    "username": "postgres",
-    "password": "",
-    "database": "grapqhl-ts-server-boilerplate",
     "synchronize": true,
     "logging": true,
     "entities": ["src/entity/**/*.js"],
