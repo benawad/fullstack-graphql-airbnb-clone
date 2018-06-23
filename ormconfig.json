@@ -3,15 +3,7 @@
     "name": "production",
     "type": "postgres",
     "synchronize": true,
-    "logging": true,
-    "entities": ["src/entity/**/*.js"],
-    "migrations": ["src/migration/**/*.js"],
-    "subscribers": ["src/subscriber/**/*.js"],
-    "cli": {
-      "entitiesDir": "src/entity",
-      "migrationsDir": "src/migration",
-      "subscribersDir": "src/subscriber"
-    }
+    "logging": true
   },
   {
     "name": "development",
