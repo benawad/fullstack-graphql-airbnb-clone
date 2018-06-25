@@ -8,3 +8,4 @@ dump.rdb
 .env
 .env.prod
 dist
+.netlify
