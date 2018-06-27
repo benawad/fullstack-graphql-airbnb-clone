@@ -11,6 +11,8 @@
     "nohoist": [
       "**/rimraf",
       "**/rimraf/**",
+      "**/react-native-elements",
+      "**/react-native-elements/**",
       "**/react-native",
       "**/react-native/**",
       "**/expo",
