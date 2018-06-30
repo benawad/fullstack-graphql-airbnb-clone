@@ -4,6 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
+    "@abb/controller": "1.0.0",
     "@abb/common": "1.0.0",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
