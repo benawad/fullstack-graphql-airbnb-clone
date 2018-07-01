@@ -6,9 +6,10 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "introspect": "apollo-codegen introspect-schema http://localhost:4000 --output schema.json",
-    "generate": "apollo-codegen generate src/**/*.tsx --schema schema.json --target ts-modern --output src/operation-result-types.ts",
-    "gen-types": "npm run introspect && npm run generate"
+    "schema:download": "apollo schema:download --endpoint=http://localhost:4000",
+    "codegen:generate": "apollo codegen:generate --queries=./src/**/*.tsx --schema=./schema.json --target=typescript ./src/schemaTypes.ts",
+    "gen:types": "npm run schema:download && npm run codegen:generate",
+    "refresh:types": "npm run gen:types && npm run build"
   },
   "dependencies": {
     "graphql": "^0.13.2",
@@ -21,6 +22,7 @@
     "@types/node": "^10.3.4",
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.0.6",
+    "apollo": "^1.1.1",
     "apollo-codegen": "^0.20.0",
     "rimraf": "^2.6.2",
     "tslint": "^5.10.0",
