@@ -1,4 +1,4 @@
-import * as rp from "request-promise";
+import * as rp from 'request-promise';
 
 export class TestClient {
   url: string;
@@ -84,8 +84,11 @@ export class TestClient {
         query: `
         mutation {
           login(email: "${email}", password: "${password}") {
-            path
-            message
+            errors {
+              path
+              message
+            }
+            sessionId
           }
         }
         `
