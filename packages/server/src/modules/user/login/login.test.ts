@@ -1,10 +1,10 @@
-import { Connection } from "typeorm";
-import * as faker from "faker";
+import { Connection } from 'typeorm';
+import * as faker from 'faker';
 
-import { invalidLogin, confirmEmailError } from "./errorMessages";
-import { User } from "../../../entity/User";
-import { TestClient } from "../../../utils/TestClient";
-import { createTestConn } from "../../../testUtils/createTestConn";
+import { invalidLogin, confirmEmailError } from './errorMessages';
+import { User } from '../../../entity/User';
+import { TestClient } from '../../../utils/TestClient';
+import { createTestConn } from '../../../testUtils/createTestConn';
 
 faker.seed(Date.now() + 1);
 const email = faker.internet.email();
@@ -24,17 +24,15 @@ const loginExpectError = async (e: string, p: string, errMsg: string) => {
   const response = await client.login(e, p);
 
   expect(response.data).toEqual({
-    login: [
-      {
-        path: "email",
-        message: errMsg
-      }
-    ]
+    login: {
+      errors: [{ path: 'email', message: errMsg }],
+      sessionId: null
+    }
   });
 };
 
-describe("login", () => {
-  test("email not found send back error", async () => {
+describe('login', () => {
+  test('email not found send back error', async () => {
     await loginExpectError(
       faker.internet.email(),
       faker.internet.password(),
@@ -42,7 +40,7 @@ describe("login", () => {
     );
   });
 
-  test("email not confirmed", async () => {
+  test('email not confirmed', async () => {
     await client.register(email, password);
 
     await loginExpectError(email, password, confirmEmailError);
@@ -52,7 +50,7 @@ describe("login", () => {
     await loginExpectError(email, faker.internet.password(), invalidLogin);
 
     const response = await client.login(email, password);
-
-    expect(response.data).toEqual({ login: null });
+    expect(response.data.login.errors).toBeNull();
+    expect(response.data.login.sessionId).not.toBeNull();
   });
 });
