@@ -1,15 +1,11 @@
 import { ResolverMap } from "../../../types/graphql-utils";
 import { Listing } from "../../../entity/Listing";
+// import { isAuthenticated } from "../../shared/isAuthenticated";
 
 export const resolvers: ResolverMap = {
   Mutation: {
     createListing: async (_, { input }, { session }) => {
-      console.log(session);
-
-      if (!session.userId) {
-        // user is not logged in
-        throw new Error("not authenticated");
-      }
+      // isAuthenticated(session);
 
       await Listing.create({
         ...input,

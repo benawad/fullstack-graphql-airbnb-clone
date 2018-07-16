@@ -47,6 +47,8 @@
     "glob": "^7.1.2",
     "graphql": "^0.13.2",
     "graphql-import": "^0.5.0",
+    "graphql-middleware": "^1.5.0",
+    "graphql-shield": "^2.2.6",
     "graphql-tools": "^3.0.0",
     "graphql-yoga": "^1.9.2",
     "ioredis": "^3.2.2",
