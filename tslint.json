@@ -8,7 +8,8 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "interface-name": false,
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "jsx-no-lambda": false
   },
   "rulesDirectory": []
 }

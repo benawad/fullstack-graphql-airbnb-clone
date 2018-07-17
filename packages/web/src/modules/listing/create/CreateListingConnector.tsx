@@ -7,10 +7,12 @@ export class CreateListingConnector extends React.PureComponent<
   render() {
     const { history } = this.props;
     return (
-      // tslint:disable-next-line:jsx-no-lambda
-      <button onClick={() => history.push("/create-listing2")}>
-        secret info
-      </button>
+      <div>
+        <p>secret info</p>
+        <button onClick={() => history.push("/delete-demo")}>
+          go to delete listing page
+        </button>
+      </div>
     );
   }
 }
