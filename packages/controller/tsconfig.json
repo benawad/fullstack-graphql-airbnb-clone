@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
@@ -18,7 +17,11 @@
     "noUnusedLocals": true,
     "types": ["jest", "node", "react", "react-dom", "react-router-dom"],
     "skipLibCheck": true,
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "..",
+    "paths": {
+      "@abb/*": ["./*/src"]
+    }
   },
   "exclude": [
     "node_modules",

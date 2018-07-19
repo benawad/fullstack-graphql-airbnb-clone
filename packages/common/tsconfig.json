@@ -18,7 +18,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "..",
+    "paths": {
+      "@abb/*": ["./*/src"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["./src/**/*.tsx", "./src/**/*.ts"]
