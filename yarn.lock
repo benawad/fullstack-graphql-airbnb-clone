@@ -910,6 +910,10 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
+"@types/shortid@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/shortid/-/shortid-0.0.29.tgz#8093ee0416a6e2bf2aa6338109114b3fbffa0e9b"
+
 "@types/sparkpost@^2.1.3":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@types/sparkpost/-/sparkpost-2.1.4.tgz#22136f73c684c194961b1730673e1d9d06957b9c"
@@ -8333,6 +8337,10 @@ nan@^2.9.2:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
+nanoid@^1.0.7:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.1.0.tgz#b18e806e1cdbfdbe030374d5cf08a48cbc80b474"
+
 nanomatch@^1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.9.tgz#879f7150cb2dab7a471259066c104eee6e0fa7c2"
@@ -11187,6 +11195,12 @@ shelljs@0.7.7:
 shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
+
+shortid@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.12.tgz#8e9a95ffbc671fff8f09e985dbc7874102b0cfd2"
+  dependencies:
+    nanoid "^1.0.7"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
