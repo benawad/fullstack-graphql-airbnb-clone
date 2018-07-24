@@ -9,6 +9,7 @@ import { ChangePasswordConnector } from "../modules/changePassword/ChangePasswor
 import { TextPage } from "../modules/TextPage";
 import { DemoDelete } from "../modules/listing/delete/DemoDelete";
 import { CreateListingConnector } from "../modules/listing/create/CreateListingConnector";
+import { FindListingsConnector } from "../modules/listing/find/FindListingsConnector";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ export const Routes = () => (
         component={ChangePasswordConnector}
       />
       <Route path="/m" component={TextPage} />
+      <Route path="/listings" component={FindListingsConnector} />
       <AuthRoute path="/create-listing" component={CreateListingConnector} />
       <AuthRoute path="/delete-demo" component={DemoDelete} />
     </Switch>
