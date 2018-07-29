@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, Link } from "react-router-dom";
 import { Form as AntForm, Button } from "antd";
 import { Form, Formik, FormikActions } from "formik";
 import { withCreateListing, WithCreateListing } from "@abb/controller";
@@ -79,6 +79,7 @@ class C extends React.PureComponent<
         {({ isSubmitting, values }) =>
           console.log(values) || (
             <Form style={{ display: "flex" }}>
+              <Link to="/logout">logout</Link>
               <div style={{ width: 400, margin: "auto" }}>
                 {pages[this.state.page]}
                 <FormItem>
