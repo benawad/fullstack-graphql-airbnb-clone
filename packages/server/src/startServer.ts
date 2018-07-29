@@ -85,7 +85,7 @@ export const startServer = async () => {
   if (process.env.NODE_ENV === "test") {
     await createTestConn(true);
   } else {
-    const conn = await createTypeormConn();
+    await createTypeormConn();
     // await conn.runMigrations();
   }
 
