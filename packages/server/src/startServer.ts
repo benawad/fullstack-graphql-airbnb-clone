@@ -32,11 +32,12 @@ export const startServer = async () => {
 
   const server = new GraphQLServer({
     schema,
-    context: ({ request }) => ({
+    context: ({ request, response }) => ({
       redis,
       url: request.protocol + "://" + request.get("host"),
       session: request.session,
       req: request,
+      res: response,
       userLoader: userLoader()
     })
   });
