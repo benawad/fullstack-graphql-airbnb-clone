@@ -14,7 +14,7 @@ import { Listing } from "../../../entity/Listing";
 
 const storeUpload = async (stream: any, mimetype: string): Promise<any> => {
   // aseq2
-  const extension = mimetype.split('/')[1];
+  const extension = mimetype.split("/")[1];
   const id = `${shortid.generate()}.${extension}`;
   const path = `images/${id}`;
 
@@ -36,7 +36,7 @@ export const resolvers: ResolverMap = {
   Mutation: {
     createListing: async (_, { input: { picture, ...data } }, { session }) => {
       // isAuthenticated(session);
-      const pictureUrl = await processUpload(picture);
+      const pictureUrl = picture ? await processUpload(picture) : null;
 
       await Listing.create({
         ...data,
