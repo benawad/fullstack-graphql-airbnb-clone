@@ -53,7 +53,7 @@
     "graphql-middleware": "^1.5.0",
     "graphql-shield": "^2.2.6",
     "graphql-tools": "^3.0.0",
-    "graphql-yoga": "^1.9.2",
+    "graphql-yoga": "^1.15.1",
     "ioredis": "^3.2.2",
     "merge-graphql-schemas": "^1.5.1",
     "node-fetch": "^2.1.2",

@@ -1,7 +1,7 @@
 import "reflect-metadata";
 // tslint:disable-next-line:no-var-requires
 require("dotenv-safe").config();
-import { GraphQLServer } from "graphql-yoga";
+import { GraphQLServer, PubSub } from "graphql-yoga";
 import * as session from "express-session";
 import * as connectRedis from "connect-redis";
 import * as RateLimit from "express-rate-limit";
@@ -30,6 +30,8 @@ export const startServer = async () => {
   const schema = genSchema() as any;
   applyMiddleware(schema, middleware);
 
+  const pubsub = new PubSub();
+
   const server = new GraphQLServer({
     schema,
     context: ({ request, response }) => ({
@@ -38,7 +40,8 @@ export const startServer = async () => {
       session: request.session,
       req: request,
       res: response,
-      userLoader: userLoader()
+      userLoader: userLoader(),
+      pubsub
     })
   });
 
