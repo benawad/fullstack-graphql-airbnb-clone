@@ -9,7 +9,7 @@ type Listing {
   latitude: Float!
   longitude: Float!
   amenities: [String!]!
-  pictureUrl: String!
+  pictureUrl: String
   owner: User!
 }
 
