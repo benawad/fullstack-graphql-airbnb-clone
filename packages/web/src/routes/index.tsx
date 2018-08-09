@@ -11,7 +11,7 @@ import { DemoDelete } from "../modules/listing/delete/DemoDelete";
 import { CreateListingConnector } from "../modules/listing/create/CreateListingConnector";
 import { FindListingsConnector } from "../modules/listing/find/FindListingsConnector";
 import { Logout } from "../modules/logout";
-import { TestSub } from "../modules/TestSub";
+import { ViewListingConnector } from "../modules/listing/view/ViewListingConnector";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -31,7 +31,7 @@ export const Routes = () => (
       <Route path="/m" component={TextPage} />
       <Route path="/listings" component={FindListingsConnector} />
       <Route path="/logout" component={Logout} />
-      <Route path="/test-sub" component={TestSub} />
+      <Route path="/listing/:listingId" component={ViewListingConnector} />
       <AuthRoute path="/create-listing" component={CreateListingConnector} />
       <AuthRoute path="/delete-demo" component={DemoDelete} />
     </Switch>

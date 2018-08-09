@@ -4,6 +4,22 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: ForgotPasswordChangeMutation
 // ====================================================
 
@@ -51,6 +67,22 @@ export interface CreateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: SendForgotPasswordEmailMutation
+// ====================================================
+
+export interface SendForgotPasswordEmailMutation {
+  sendForgotPasswordEmail: boolean | null;
+}
+
+export interface SendForgotPasswordEmailMutationVariables {
+  email: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: FindListingsQuery
 // ====================================================
 
@@ -62,28 +94,12 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
   id: string;
   name: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   owner: FindListingsQuery_findListings_owner;
 }
 
 export interface FindListingsQuery {
   findListings: FindListingsQuery_findListings[];
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: SendForgotPasswordEmailMutation
-// ====================================================
-
-export interface SendForgotPasswordEmailMutation {
-  sendForgotPasswordEmail: boolean | null;
-}
-
-export interface SendForgotPasswordEmailMutationVariables {
-  email: string;
 }
 
 
@@ -152,15 +168,28 @@ export interface RegisterMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: MeQuery
+// GraphQL query operation: ViewListingQuery
 // ====================================================
 
-export interface MeQuery_me {
+export interface ViewListingQuery_viewListing_owner {
+  id: string;
   email: string;
 }
 
-export interface MeQuery {
-  me: MeQuery_me | null;
+export interface ViewListingQuery_viewListing {
+  id: string;
+  name: string;
+  category: string;
+  pictureUrl: string | null;
+  owner: ViewListingQuery_viewListing_owner;
+}
+
+export interface ViewListingQuery {
+  viewListing: ViewListingQuery_viewListing | null;
+}
+
+export interface ViewListingQueryVariables {
+  id: string;
 }
 
 /* tslint:disable */
