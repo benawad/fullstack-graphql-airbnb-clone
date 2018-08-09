@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ViewWrapper } from "./ViewWrapper";
+import { ViewListing } from "@abb/controller";
 import { RouteComponentProps } from "react-router-dom";
 
 export class ViewListingConnector extends React.PureComponent<
@@ -14,17 +14,16 @@ export class ViewListingConnector extends React.PureComponent<
       }
     } = this.props;
     return (
-      <ViewWrapper listingId={listingId}>
-        {(data: any) => {
+      <ViewListing listingId={listingId}>
+        {data => {
           console.log(data);
-
           if (!data.listing) {
             return <div>...loading</div>;
           }
 
           return <div>{data.listing.name}</div>;
         }}
-      </ViewWrapper>
+      </ViewListing>
     );
   }
 }
