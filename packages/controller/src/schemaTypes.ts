@@ -4,22 +4,6 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: MeQuery
-// ====================================================
-
-export interface MeQuery_me {
-  email: string;
-}
-
-export interface MeQuery {
-  me: MeQuery_me | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL mutation operation: ForgotPasswordChangeMutation
 // ====================================================
 
@@ -67,22 +51,6 @@ export interface CreateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL mutation operation: SendForgotPasswordEmailMutation
-// ====================================================
-
-export interface SendForgotPasswordEmailMutation {
-  sendForgotPasswordEmail: boolean | null;
-}
-
-export interface SendForgotPasswordEmailMutationVariables {
-  email: string;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL query operation: FindListingsQuery
 // ====================================================
 
@@ -100,6 +68,22 @@ export interface FindListingsQuery_findListings {
 
 export interface FindListingsQuery {
   findListings: FindListingsQuery_findListings[];
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: SendForgotPasswordEmailMutation
+// ====================================================
+
+export interface SendForgotPasswordEmailMutation {
+  sendForgotPasswordEmail: boolean | null;
+}
+
+export interface SendForgotPasswordEmailMutationVariables {
+  email: string;
 }
 
 
@@ -168,6 +152,33 @@ export interface RegisterMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: ViewMessagesQuery
+// ====================================================
+
+export interface ViewMessagesQuery_messages_user {
+  id: string;
+  email: string;
+}
+
+export interface ViewMessagesQuery_messages {
+  text: string;
+  user: ViewMessagesQuery_messages_user;
+  listingId: string;
+}
+
+export interface ViewMessagesQuery {
+  messages: ViewMessagesQuery_messages[];
+}
+
+export interface ViewMessagesQueryVariables {
+  listingId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewListingQuery
 // ====================================================
 
@@ -190,6 +201,22 @@ export interface ViewListingQuery {
 
 export interface ViewListingQueryVariables {
   id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
 }
 
 /* tslint:disable */

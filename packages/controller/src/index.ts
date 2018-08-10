@@ -9,3 +9,4 @@ export * from "./types/NormalizedErrorMap";
 export * from "./modules/auth/AuthRoute";
 export * from "./modules/LogoutController";
 export * from "./modules/ViewListing";
+export * from "./modules/ViewMessages";
