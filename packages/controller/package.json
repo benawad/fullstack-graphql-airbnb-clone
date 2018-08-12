@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist && tsc",
+    "watch": "tsc --watch",
     "schema:download": "apollo schema:download --endpoint=http://localhost:4000",
     "codegen:generate": "apollo codegen:generate --queries=./src/**/*.tsx --schema=./schema.json --target=typescript ./src/schemaTypes.ts",
     "gen:types": "npm run schema:download && npm run codegen:generate",
