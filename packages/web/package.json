@@ -9,6 +9,7 @@
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
     "@types/react-dropzone": "^4.2.0",
+    "@types/react-geosuggest": "^2.7.7",
     "@types/react-router-dom": "^4.2.7",
     "@types/yup": "^0.24.6",
     "react-scripts-ts": "2.16.0",
@@ -32,6 +33,7 @@
     "react-apollo": "^2.1.5",
     "react-dom": "^16.4.0",
     "react-dropzone": "^4.2.13",
+    "react-geosuggest": "^2.8.0",
     "react-router-dom": "^4.3.1",
     "yup": "^0.25.1"
   },
