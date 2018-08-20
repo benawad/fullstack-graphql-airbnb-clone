@@ -34,6 +34,7 @@
     "react-dom": "^16.4.0",
     "react-dropzone": "^4.2.13",
     "react-geosuggest": "^2.8.0",
+    "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
     "yup": "^0.25.1"
   },
