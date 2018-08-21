@@ -39,6 +39,10 @@ export class LocationField extends React.PureComponent<
   };
 
   onSuggestSelect = (place: Suggest) => {
+    if (!place) {
+      return;
+    }
+
     const {
       location: { lat, lng }
     } = place;
