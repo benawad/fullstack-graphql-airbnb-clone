@@ -25,9 +25,5 @@
   },
   "devDependencies": {
     "lerna": "^2.11.0"
-  },
-  "engines": {
-    "node": ">=9.11.1",
-    "yarn": ">=1.4.2"
   }
 }
