@@ -72,7 +72,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "test": "cross-env NODE_ENV=test jest --watch",
-    "build": "rimraf ./dist && tsc && copyfiles -u 1 src/**/*.graphql dist",
+    "build": "rimraf ./dist && tsc && copyfiles -u 1 src/**/*.graphql dist/server/src",
     "gen-schema-types": "ts-node src/scripts/createTypes.ts"
   },
   "jest": {

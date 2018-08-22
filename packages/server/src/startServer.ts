@@ -31,7 +31,13 @@ export const startServer = async () => {
   const schema = genSchema() as any;
   applyMiddleware(schema, middleware);
 
-  const pubsub = new RedisPubSub();
+  const pubsub = new RedisPubSub(
+    process.env.NODE_ENV === "production"
+      ? {
+          connection: process.env.REDIS_URL as any
+        }
+      : {}
+  );
 
   const server = new GraphQLServer({
     schema,
