@@ -11,6 +11,7 @@ import { Page3 } from "./ui/Page3";
 const FormItem = AntForm.Item;
 
 export interface ListingFormValues {
+  pictureUrl: string | null;
   picture: ImageFile | null;
   name: string;
   category: string;
@@ -39,6 +40,7 @@ interface Props {
 const pages = [<Page1 />, <Page2 />, <Page3 />];
 
 export const defaultListingFormValues = {
+  pictureUrl: null,
   picture: null,
   name: "",
   category: "",
