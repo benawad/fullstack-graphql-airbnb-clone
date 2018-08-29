@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "yarn run build:server",
+    "postinstall": "./postinstall.sh",
     "build:server": "lerna run build --scope={@abb/common,@abb/server}",
     "build:web": "lerna run build --scope={@abb/common,@abb/controller,@abb/web}"
   },
