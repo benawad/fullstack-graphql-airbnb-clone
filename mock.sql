@@ -1,0 +1,1 @@
+insert into listings (id, name, category, "pictureUrl", description, price, beds, guests, latitude, longitude, amenities, "userId") values ('ed110dda-0f42-4e20-b43e-8d7f5f869048', 'Buzzbean', 'condo', 'http://dummyimage.com/138x113.png/ff4444/ffffff', 'lacinia nisi venenatis tristique', 423, 3, 4, 24.0527442, -74.5302159, '{}', '21c31c50-9627-4cca-ae66-35be19ef2c7b');
