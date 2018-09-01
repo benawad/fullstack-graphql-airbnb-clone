@@ -168,6 +168,44 @@ export interface RegisterMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: SearchListingsQuery
+// ====================================================
+
+export interface SearchListingsQuery_searchListings_owner {
+  id: string;
+  email: string;
+}
+
+export interface SearchListingsQuery_searchListings {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  price: number;
+  beds: number;
+  guests: number;
+  longitude: number;
+  latitude: number;
+  amenities: string[];
+  pictureUrl: string | null;
+  owner: SearchListingsQuery_searchListings_owner;
+}
+
+export interface SearchListingsQuery {
+  searchListings: SearchListingsQuery_searchListings[];
+}
+
+export interface SearchListingsQueryVariables {
+  input?: SearchListingsInput | null;
+  offset: number;
+  limit: number;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateListingMutation
 // ====================================================
 
@@ -214,22 +252,6 @@ export interface ViewListingQuery {
 
 export interface ViewListingQueryVariables {
   id: string;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: MeQuery
-// ====================================================
-
-export interface MeQuery_me {
-  email: string;
-}
-
-export interface MeQuery {
-  me: MeQuery_me | null;
 }
 
 
@@ -286,6 +308,22 @@ export interface NewMessageSubscriptionVariables {
   listingId: string;
 }
 
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
+}
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -297,6 +335,13 @@ export interface NewMessageSubscriptionVariables {
 export interface MessageInput {
   text: string;
   listingId: string;
+}
+
+// 
+export interface SearchListingsInput {
+  guests?: number | null;
+  beds?: number | null;
+  name?: string | null;
 }
 
 // 
