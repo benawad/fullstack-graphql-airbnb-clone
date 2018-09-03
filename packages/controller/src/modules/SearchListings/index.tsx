@@ -37,6 +37,8 @@ export const searchListingsQuery = gql`
 export interface WithSearchListings {
   listings: SearchListingsQuery_searchListings[];
   loading: boolean;
+  loadMore: () => void;
+  hasMoreListings: boolean;
 }
 
 interface Props {
@@ -52,16 +54,51 @@ export class SearchListings extends React.PureComponent<Props> {
         query={searchListingsQuery}
         variables={variables}
       >
-        {({ data, loading }) => {
+        {({ data, loading, fetchMore }) => {
           let listings: SearchListingsQuery_searchListings[] = [];
 
           if (data && data.searchListings) {
             listings = data.searchListings;
           }
 
+          // limit 5
+          // 2
+          // 2 % 5 = 2
+          // 5 % 5 = 0
+          // 5, 10, 15, 20
+          let hasMoreListings = listings.length % variables.limit === 0;
+          // listings length: 5
+          // offset: 0
+          // offset: 5
+
+          if (listings.length <= variables.offset) {
+            hasMoreListings = false;
+          }
+
           return children({
+            hasMoreListings,
             listings,
-            loading
+            loading,
+            loadMore: () => {
+              fetchMore({
+                variables: {
+                  ...variables,
+                  offset: listings.length
+                },
+                updateQuery: (prev, { fetchMoreResult }) => {
+                  if (!fetchMoreResult) {
+                    return prev;
+                  }
+                  return {
+                    ...prev,
+                    searchListings: [
+                      ...prev.searchListings,
+                      ...fetchMoreResult.searchListings
+                    ]
+                  };
+                }
+              });
+            }
           });
         }}
       </Query>
