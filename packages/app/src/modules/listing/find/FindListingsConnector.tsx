@@ -6,8 +6,7 @@ import {
   TextInput,
   SafeAreaView,
   View,
-  FlatList,
-  ActivityIndicator
+  FlatList
 } from "react-native";
 import { SearchListings } from "@abb/controller";
 
@@ -63,9 +62,6 @@ export class FindListingsConnector extends React.PureComponent<{}, State> {
                   <View />
                 )
               }
-              style={{
-                marginBottom: 25
-              }}
               data={listings}
               keyExtractor={({ id }) => `${id}-flc`}
               renderItem={({ item: l }) => (
