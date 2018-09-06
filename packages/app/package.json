@@ -29,7 +29,7 @@
     "exp": "^56.0.0",
     "metro-bundler-config-yarn-workspaces": "^1.0.3",
     "react-native-typescript-transformer": "^1.2.9",
-    "typescript": "^2.9.1"
+    "typescript": "^3.0.3"
   },
   "scripts": {
     "start": "exp start --offline",
