@@ -107,7 +107,9 @@ export const startServer = async () => {
   // fill cache
   const listings = await Listing.find();
   const listingStrings = listings.map(x => JSON.stringify(x));
-  await redis.lpush(listingCacheKey, ...listingStrings);
+  if (listingStrings.length) {
+    await redis.lpush(listingCacheKey, ...listingStrings);
+  }
   // console.log(await redis.lrange(listingCacheKey, 0, -1));
 
   const port = process.env.PORT || 4000;
