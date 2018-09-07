@@ -47,13 +47,19 @@ createdb graphql-ts-server-boilerplate
 
 6. [Add a user](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) with the username `postgres` and and no password. (You can change what these values are in the [ormconfig.json](https://github.com/benawad/graphql-ts-server-boilerplate/blob/master/ormconfig.json))
 
-7. Install and start Redis
+7. Connect to the database with `psql` and add the uuid extension:
 
-8. In `packages/server` create a file called `.env` and add the following line inside: `FRONTEND_HOST=http://localhost:3000`
+```
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+``` 
 
-9. Run `yarn build` in `packages/common`
+8. Install and start Redis
 
-10. Run `yarn build` in `packages/controller`
+9. In `packages/server` create a file called `.env` and add the following line inside: `FRONTEND_HOST=http://localhost:3000`
+
+10. Run `yarn build` in `packages/common`
+
+11. Run `yarn build` in `packages/controller`
 
 ## Usage
 
