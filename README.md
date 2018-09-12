@@ -67,6 +67,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 2. Now you can run `yarn start` in `packages/web` or `packages/app` to start the website or app.
 
+3. How to get credentials working in graphql playground: https://youtu.be/oM-EmNdhwI4?t=8m39s
+
 ## Features
 
 1. Website register/login
