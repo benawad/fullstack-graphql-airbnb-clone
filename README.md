@@ -61,6 +61,10 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 11. Run `yarn build` in `packages/controller`
 
+12. Get Google Maps API key and put it here https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/master/packages/web/public/index.html#L14 Videos doing that: https://youtu.be/-QQnzDVcTCo and https://youtu.be/xLlIgokKiLc
+
+
+
 ## Usage
 
 1. Start server `yarn start` in `packages/server`
