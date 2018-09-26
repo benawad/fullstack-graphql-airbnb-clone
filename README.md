@@ -73,6 +73,19 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 3. How to get credentials working in graphql playground: https://youtu.be/oM-EmNdhwI4?t=8m39s
 
+## Deploy
+
+### Server
+
+1. https://www.youtube.com/watch?v=qQAozc1MkdU
+2. https://www.youtube.com/watch?v=0t-rE5wUP-E
+
+### Website
+
+1. https://www.youtube.com/watch?v=FiU3SHEaFwk
+2. https://www.youtube.com/watch?v=vPu1sfuYFzw
+3. https://www.youtube.com/watch?v=Ry6Zobb-kaw
+
 ## Features
 
 1. Website register/login
