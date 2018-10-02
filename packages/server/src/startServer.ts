@@ -1,7 +1,7 @@
 import "reflect-metadata";
 // tslint:disable-next-line:no-var-requires
 require("dotenv-safe").config();
-import { GraphQLServer } from "graphql-yoga";
+import { ApolloServer } from "apollo-server-express";
 import * as session from "express-session";
 import * as connectRedis from "connect-redis";
 import * as RateLimit from "express-rate-limit";
@@ -9,6 +9,8 @@ import * as RateLimitRedisStore from "rate-limit-redis";
 import { applyMiddleware } from "graphql-middleware";
 import * as express from "express";
 import { RedisPubSub } from "graphql-redis-subscriptions";
+import * as cors from "cors";
+import * as http from "http";
 
 import { redis } from "./redis";
 import { createTypeormConn } from "./utils/createTypeormConn";
@@ -40,20 +42,35 @@ export const startServer = async () => {
       : {}
   );
 
-  const server = new GraphQLServer({
+  const apolloServer = new ApolloServer({
+    subscriptions: {
+      path: "/"
+    },
     schema,
-    context: ({ request, response }) => ({
+    context: ({ req, res }: any) => ({
       redis,
-      url: request ? request.protocol + "://" + request.get("host") : "",
-      session: request ? request.session : undefined,
-      req: request,
-      res: response,
+      url: req ? req.protocol + "://" + req.get("host") : "",
+      session: req ? req.session : undefined,
+      req,
+      res,
       userLoader: userLoader(),
       pubsub
     })
   });
 
-  server.express.use(
+  const app = express();
+
+  app.use(
+    cors({
+      credentials: true,
+      origin:
+        process.env.NODE_ENV === "test"
+          ? "*"
+          : (process.env.FRONTEND_HOST as string)
+    })
+  );
+
+  app.use(
     new RateLimit({
       store: new RateLimitRedisStore({
         client: redis
@@ -64,7 +81,7 @@ export const startServer = async () => {
     })
   );
 
-  server.express.use(
+  app.use(
     session({
       store: new RedisStore({
         client: redis as any,
@@ -83,17 +100,9 @@ export const startServer = async () => {
     } as any)
   );
 
-  server.express.use("/images", express.static("images"));
+  app.use("/images", express.static("images"));
 
-  const cors = {
-    credentials: true,
-    origin:
-      process.env.NODE_ENV === "test"
-        ? "*"
-        : (process.env.FRONTEND_HOST as string)
-  };
-
-  server.express.get("/confirm/:id", confirmEmail);
+  app.get("/confirm/:id", confirmEmail);
 
   if (process.env.NODE_ENV === "test") {
     await createTestConn(true);
@@ -112,12 +121,27 @@ export const startServer = async () => {
   }
   // console.log(await redis.lrange(listingCacheKey, 0, -1));
 
-  const port = process.env.PORT || 4000;
-  const app = await server.start({
-    cors,
-    port: process.env.NODE_ENV === "test" ? 0 : port
+  apolloServer.applyMiddleware({
+    app,
+    cors: false,
+    path: "/"
   });
-  console.log("Server is running on localhost:4000");
+
+  const port = process.env.NODE_ENV === "test" ? 0 : process.env.PORT || 4000;
+
+  const httpServer = http.createServer(app);
+  apolloServer.installSubscriptionHandlers(httpServer);
+
+  httpServer.listen(port, () => {
+    console.log(
+      `🚀 Server ready at http://localhost:${port}${apolloServer.graphqlPath}`
+    );
+    console.log(
+      `🚀 Subscriptions ready at ws://localhost:${port}${
+        apolloServer.subscriptionsPath
+      }`
+    );
+  });
 
   return app;
 };
