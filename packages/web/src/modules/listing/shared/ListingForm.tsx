@@ -69,7 +69,7 @@ export class ListingForm extends React.PureComponent<Props, State> {
         onSubmit={submit}
       >
         {({ isSubmitting, values }) =>
-          console.log(values) || (
+          (
             <Form style={{ display: "flex" }}>
               <Link to="/logout">logout</Link>
               <div style={{ width: 400, margin: "auto" }}>
