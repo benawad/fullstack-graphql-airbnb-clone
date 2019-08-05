@@ -20,14 +20,14 @@ export const sendEmail = async (
     });
 
     const message = {
-      from: "Sender Name <sender@example.com>",
+      from: "Sender Name <service@netstay.com>",
       to: `Recipient <${recipient}>`,
-      subject: "Nodemailer is unicode friendly ✔",
-      text: "Hello to myself!",
+      subject: "Confirm Your Netstay Account",
+      text: "Welcome to Netstay",
       html: `<html>
         <body>
-        <p>Testing SparkPost - the world's most awesomest email service!</p>
-        <a href="${url}">${linkText}</a>
+        <p></p>
+        <a href="${https://netstay.netlify.com}">${Click here to login to your Netstay Account}</a>
         </body>
         </html>`
     };
