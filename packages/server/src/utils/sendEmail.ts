@@ -20,14 +20,14 @@ export const sendEmail = async (
     });
 
     const message = {
-      from: "Sender Name <service@netstay.com>",
+      from: "Sender Name <sender@example.com>",
       to: `Recipient <${recipient}>`,
-      subject: "Confirm Your Netstay Account",
-      text: "Welcome to Netstay",
+      subject: "Netstay Confirm Email",
+      text: "Netstay",
       html: `<html>
         <body>
-        <p></p>
-        <a href="${https://netstay.netlify.com}">${Click here to login to your Netstay Account}</a>
+        <p>Welcome to Netstay! Confirm your email here.</p>
+        <a href="${url}">${linkText}</a>
         </body>
         </html>`
     };
