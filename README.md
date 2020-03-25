@@ -38,7 +38,7 @@ cd fullstack-graphql-airbnb-clone
 yarn
 ```
 
-4. Start PostgreSQL server
+4. Start PostgreSQL server. Use PostgreSQL version 10.12
 5. Create database called `graphql-ts-server-boilerplate`
 
 ```
@@ -53,7 +53,7 @@ createdb graphql-ts-server-boilerplate
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ``` 
 
-8. Install and start Redis
+8. Install and start Redis. If you are using Windows, use Redis 3.0.503
 
 9. In `packages/server` create a file called `.env` and add the following line inside: `FRONTEND_HOST=http://localhost:3000`
 
@@ -69,7 +69,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 1. Start server `yarn start` in `packages/server`
 
-2. Now you can run `yarn start` in `packages/web` or `packages/app` to start the website or app.
+2. Now you can run `yarn start` in `packages/web` or `packages/app` to start the website or app. Use Node 10.19 for app
 
 3. How to get credentials working in graphql playground: https://youtu.be/oM-EmNdhwI4?t=8m39s
 
