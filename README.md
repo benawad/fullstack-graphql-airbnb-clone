@@ -69,7 +69,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 1. Start server `yarn start` in `packages/server`
 
-2. Now you can run `yarn start` in `packages/web` or `packages/app` to start the website or app. Use Node 10.0 for app
+2. Now you can run `yarn start` in `packages/web` or `packages/app` to start the website or app. Use Node 10.19 for app
 
 3. How to get credentials working in graphql playground: https://youtu.be/oM-EmNdhwI4?t=8m39s
 
