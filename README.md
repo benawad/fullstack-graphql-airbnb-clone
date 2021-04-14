@@ -94,5 +94,5 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 4. Website and App forgot password
 5. Website and App create listing
 6. Website and App view listings
-7. logout
+7. Logout
 8. Website chat
